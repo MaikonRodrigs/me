@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { ThemeContext } from 'styled-components'
+import { LoadingIcons } from '@/utils/loading'
 
 import * as S from './styles';
 
 function Welcome({ toggleTheme }) {
   const { title } = useContext(ThemeContext);
   const [loading, setLoading] = useState(false)
+  const [saved, setSaved] = useState(false)
 
   function currentTheme() {
     if (title === 'light') {
@@ -15,12 +17,18 @@ function Welcome({ toggleTheme }) {
     } else return 'dark'
   }
 
+  function savedStorage() {
+    setSaved(true)
+    setTimeout(() => {
+      setSaved(false)
+    }, 9000)
+  }
+
   useEffect(() => {
     setLoading(true)
-    // setTimeout(() => {
-    //   setLoading(false)
-    // }, 5000)
-
+    setTimeout(() => {
+      setLoading(false)
+    }, 5000)
   }, [])
 
   if (loading) {
@@ -32,6 +40,15 @@ function Welcome({ toggleTheme }) {
     )
   }
 
+  if (saved) {
+    return (
+      <S.Container>
+        <LoadingIcons />
+        <S.Text>Wait i'am saving to local storage as per your settings.</S.Text>
+        <S.TextSecondary>if it takes time, it's the back-end's fault, lol</S.TextSecondary>
+      </S.Container>
+    )
+  }
 
   return (
     <S.Container>
@@ -50,7 +67,7 @@ function Welcome({ toggleTheme }) {
         />
         <S.Text>{currentTheme()}</S.Text>
       </S.Row>
-      <S.Button>Continue</S.Button>
+      <S.Button onClick={savedStorage}>Continue</S.Button>
     </S.Container>
   );
 }

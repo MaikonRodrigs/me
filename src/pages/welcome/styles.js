@@ -28,6 +28,13 @@ export const Text = styled.span`
   animation: ${fade} 5s ease-in-out;
 `;
 
+export const TextSecondary = styled.span`
+  font-size: 12px;
+  color: ${(props) => props.theme.colors.text};
+  animation: ${fade} 8s ease-in-out;
+
+`;
+
 export const SwitchToggle = styled(Switch)`
   margin-bottom: 20px;
   margin-top: 10px;
@@ -42,7 +49,7 @@ export const Row = styled.div`
 
 export const Button = styled.button`
   color: ${(props) => props.theme.colors.text};
-  animation: ${fade} 6s ease-in-out;
   margin-top: 20px;
   cursor: pointer;
+  animation: ${fade} 6s ease-in-out;
 `;
