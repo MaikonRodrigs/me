@@ -1,21 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components";
-import { Spinner3 } from '@styled-icons/icomoon/Spinner3'
 
 const BounceAnimation = keyframes`
   0% { margin-bottom: 0 }
   50% { margin-bottom: 1rem }
   100% {margin-bottom: 0 }
-`;
-
-const rotate = keyframes`
-	0% {
-    transform: rotate(0deg);
-	}
-
-	100% {
-    transform: rotate(360deg);
-	}
 `;
 
 const Container = styled.div`
@@ -38,7 +27,7 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
-const Dot = styled.div`
+export const Dot = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 50%;
   width: 0.5rem;
@@ -49,14 +38,6 @@ const Dot = styled.div`
   animation: ${BounceAnimation} 0.5s linear infinite;
   animation-delay: ${({ delay }) => `${delay}`};
 `;
-
-const SpinnerIcon = styled(Spinner3)`
-  color: ${(props) => props.theme.colors.secondary};
-  width: 30px;
-  margin-bottom: -200px;
-  animation: ${rotate} 1s linear infinite;
-`;
-
 
 export const LoadingIcons = () => {
   return (
@@ -75,13 +56,5 @@ export const LoadingPage = () => {
       <Dot delay="0.2s" />
       <Dot delay="0.3s" />
     </Container >
-  )
-}
-
-export const LoadingSpinner = () => {
-  return (
-    <Wrapper>
-      <SpinnerIcon />
-    </Wrapper>
   )
 }

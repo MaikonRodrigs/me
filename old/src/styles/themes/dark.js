@@ -4,11 +4,9 @@ export default {
 
   colors: {
       primary: '#1A1A1A',
-      secondary: '#e9e3e9',
-      codebox: '#252525',
-
+      secondary: '#5F5F5F',
       text: '#fff',
-      text_secondary: '#fffaff',
+      text_secondary: 'var(--white)',
 
       background: '#1A1A1A' 
   },

@@ -1,18 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import Welcome from '@/pages/Welcome'
-import { GlobalStyle } from '@/styles/GlobalStyle'
+import Home from './pages/home/index'
+import Welcome from './pages/welcome'
 
-
-import { ThemeProvider } from 'styled-components'
 import light from '@/styles/themes/light'
 import dark from '@/styles/themes/dark'
 
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from '@/styles/GlobalStyle'
+
+
+import usePersistedState from '@/hooks/usePersistedState'
+
 function App() {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = usePersistedState('theme', light)
+
   const toggleTheme = () => {
-    setTheme(theme.title === "light" ? dark : light);
+    setTheme(theme.title === "light" ? dark : light)
   };
   return (
     <BrowserRouter>
@@ -20,6 +25,7 @@ function App() {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<Welcome toggleTheme={toggleTheme} />} />
+          <Route path="/home" element={<Home toggleTheme={toggleTheme} />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter >

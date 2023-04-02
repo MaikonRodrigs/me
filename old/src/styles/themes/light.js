@@ -3,13 +3,12 @@ export default {
   title: "light",
 
   colors: {
-    primary: "#fffaff",
-    secondary: "#5c555c",
-    codebox: '#C4C4C4',
+    primary: "#FFFFFF",
+    secondary: "#1A1A1A",
 
     text: "#333333",
     text_secondary: "#C4C4C4",
 
-    background: "#fffaff",
+    background: "#FFFFFF",
   },
 };
