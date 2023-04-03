@@ -51,10 +51,7 @@ function Welcome({ toggleTheme }) {
     const message = 'Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️'
     const message2 = 'Technology enthusiast, passionate about programming and passionate about cats.'
     const message3 = 'I promise not to steal your bank details, Im just a programmer and not a hacker :('
-    const react = `import React from 'react'`
     const code = `
-        export const App = () = {
-          return( 
             <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               <h1 style={{ color: 'themeColor.heading' }}>
                 Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️ </br>
@@ -93,14 +90,8 @@ function Welcome({ toggleTheme }) {
           <S.TextMessage>#CodeInline</S.TextMessage>
           <S.CodeText>
             <TypeLetter
-              text={react}
-              noCursor
-              align
-            />
-            <TypeLetter
               text={code}
               align
-              delay={500}
             />
           </S.CodeText>
         </S.RowCode>
@@ -158,7 +149,7 @@ function Welcome({ toggleTheme }) {
               offColor="#C4C4C4"
               onColor="#666"
             />
-            <S.Text>{currentTheme()}</S.Text>
+            <S.Text>{title}</S.Text>
           </S.Row>
           {/* <S.Button onClick={() => finishWelcome()}>Continue</S.Button> */}
           <S.Button onClick={() => setStep(3)}>Continue</S.Button>

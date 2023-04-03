@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 
+import Header from '@/components/header'
+import FirstSection from '@/components/firstsection'
+
 import * as S from './styles';
 
 
@@ -14,25 +17,15 @@ function Home({ toggleTheme }) {
     // if (!getLocalStorage) {
     //   navigate('/')
     // }
+    console.log('loading home')
   }, [])
 
 
   return (
-    <>
-    <h1>HOME</h1>
-      {/* <S.SwitchToggle
-        onChange={toggleTheme}
-        checked={title === 'light'}
-        checkedIcon={false}
-        uncheckedIcon={false}
-        height={40}
-        width={80}
-        handleDiameter={30}
-        offHandleColor="#333333"
-        offColor="#C4C4C4"
-        onColor="#666"
-      /> */}
-    </>
+    <S.Container>
+      <Header toggleTheme={toggleTheme} />
+      <FirstSection />
+    </S.Container>
   )
 }
 
