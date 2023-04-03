@@ -14,7 +14,7 @@ function usePersistedState(key, initialState) {
   useEffect(() => {
     setTimeout(() => {
       localStorage.setItem(key, JSON.stringify(state));
-    }, 1000)
+    }, 500)
   }, [key, state]);
 
   return [state, setState];

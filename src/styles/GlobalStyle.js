@@ -37,5 +37,6 @@ html, border-style, #root {
     --error: #ED6A5E;
     --shadow: 14px 22px 49px -18px rgba(0, 0, 0, 0.75);
     --text-shadow: 0 0 12px rgba(0,0,0,.25);
+    --sm: (max-width: 720px);
     }
 `;

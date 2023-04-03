@@ -23,25 +23,27 @@ function Welcome({ toggleTheme }) {
   function waitingForStep(i) {
     setTimeout(() => {
       setStep(i)
-    }, 5000)
+    }, 6000)
     return (
-      <S.Container>
-        <LoadingSpinner />
-        <S.Title>Please, choise your prefence theme, better experience...</S.Title>
-        <S.TextSecondary>Please wait for <span onClick={() => setStep(2)}>continue</span></S.TextSecondary>
-      </S.Container>
+      <>
+        <S.Container>
+          <LoadingSpinner />
+          <S.Title>Please, choise your prefence theme, better experience...</S.Title>
+          <S.TextSecondary>Please wait for <span onClick={() => setStep(2)}>continue</span></S.TextSecondary>
+        </S.Container>
+      </>
     )
   }
 
   function stepLocalStorage(i) {
     setTimeout(() => {
       setStep(i)
-    }, 4000)
+    }, 5000)
     return (
       <S.Container>
         <LoadingIcons />
         <S.TextWaiting>Wait i'am saving to local storage as per your settings.</S.TextWaiting>
-        <S.TextSecondary>if it takes time, it's the back-end's fault, lol</S.TextSecondary>
+        <S.TextSecondary>if it takes time, it's the <span>back-end </span>fault, lol</S.TextSecondary>
       </S.Container>
     )
   }
@@ -51,6 +53,7 @@ function Welcome({ toggleTheme }) {
     const message = 'Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️'
     const message2 = 'Technology enthusiast, passionate about programming and passionate about cats.'
     const message3 = 'I promise not to steal your bank details, Im just a programmer and not a hacker :('
+    const react = `import React from 'react'`
     const code = `
             <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               <h1 style={{ color: 'themeColor.heading' }}>
@@ -87,11 +90,30 @@ function Welcome({ toggleTheme }) {
           />
         </S.TextMessage>
         <S.RowCode>
+          <S.CodeHeader>
+            <S.Dots>
+              <S.IconClosed color="#ED6A5E" />
+              <S.IconClosed color="#F4BF4F" />
+              <S.IconClosed color="#61C554" />
+            </S.Dots>
+            <S.Vscode />
+          </S.CodeHeader>
           <S.TextMessage>#CodeInline</S.TextMessage>
           <S.CodeText>
             <TypeLetter
+              text={react}
+              align
+              time="30"
+              noCursor
+            />
+            <br />
+          </S.CodeText>
+          <S.CodeText>
+            <TypeLetter
+              delay={1500}
               text={code}
               align
+              time="20"
             />
           </S.CodeText>
         </S.RowCode>
@@ -149,7 +171,7 @@ function Welcome({ toggleTheme }) {
               offColor="#C4C4C4"
               onColor="#666"
             />
-            <S.Text>{title}</S.Text>
+            <S.TextThemeActive>{title}</S.TextThemeActive>
           </S.Row>
           {/* <S.Button onClick={() => finishWelcome()}>Continue</S.Button> */}
           <S.Button onClick={() => setStep(3)}>Continue</S.Button>

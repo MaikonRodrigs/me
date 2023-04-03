@@ -8,6 +8,10 @@ const fade = keyframes`
 export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  
+  @media (max-width: 720px) {
+    width: 90%;
+  }
 
 `;
 

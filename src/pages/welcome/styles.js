@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import Switch from "react-switch";
+import { VisualStudio } from "@styled-icons/boxicons-logos/VisualStudio";
 
 const fade = keyframes`
   /* from { opacity: 0} to { opacity: 1} */
@@ -27,6 +28,11 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
   position: relative;
+
+  @media (max-width: 720px) {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 export const Button = styled.button`
@@ -42,22 +48,43 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.text};
   animation: ${fadeadndisplay} 3s ease-in-out;
   animation-fill-mode: both;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
+
 
 export const Text = styled.span`
   color: ${(props) => props.theme.colors.secondary};
   font-size: 22px;
   margin-bottom: 10px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
+  @media (max-width: 720px) {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    padding: 20px 0;
+  }
 `;
 
+export const TextThemeActive = styled.span`
+  color: ${(props) => props.theme.colors.secondary};
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+`;
 export const Row = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 60px;
   opacity: 0;
-  animation: ${fadeadndisplay} .5s ease-in-out;
+  animation: ${fadeadndisplay} 0.5s ease-in-out;
   animation-fill-mode: both;
 `;
 
@@ -70,7 +97,13 @@ export const TextWaiting = styled.h1`
   color: ${(props) => props.theme.colors.secondary};
   font-size: 22px;
   margin-bottom: 10px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
 export const TextSecondary = styled.span`
   font-size: 12px;
@@ -80,6 +113,7 @@ export const TextSecondary = styled.span`
   span {
     text-decoration: underline;
     cursor: pointer;
+    font-weight: 800;
   }
 `;
 
@@ -87,11 +121,15 @@ export const TextMessage = styled.span`
   font-size: 14px;
   color: ${(props) => props.theme.colors.secondary};
   margin-top: 20px;
-  /* animation: ${fade} 8s ease-in-out; */
+
+  @media (max-width: 720px) {
+    text-align: center;
+    margin-top: -180px;
+  }
 `;
 
 export const RowCode = styled.div`
-  padding: 40px;
+  padding: 20px 20px;
   width: 500px;
   min-height: 100px;
   height: auto;
@@ -102,8 +140,41 @@ export const RowCode = styled.div`
   bottom: 0px;
   box-shadow: var(--shadow);
 
+  @media (max-width: 720px) {
+    width: 90%;
+  }
 `;
 
 export const CodeText = styled.span`
+  color: red;
+`;
 
+export const Vscode = styled(VisualStudio)`
+  width: 20px;
+  color: ${(props) => props.theme.colors.secondary};
+`;
+
+export const CodeHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 15px;
+`;
+
+export const Dots = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+`;
+
+export const IconClosed = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: ${({ color }) => `${color}`};
+  border-radius: 9999px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
 `;

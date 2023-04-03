@@ -10,7 +10,7 @@ export function TypeLetter(props) {
       setShowCursor(true);
 
       setText(text.slice(0, i + 1))
-      setTimeout(() => TypeDisplay(text, i + 1), 60)
+      setTimeout(() => TypeDisplay(text, i + 1), props?.time ?? 60)
 
     } else if (i >= text.length && props?.noCursor) {
       setShowCursor(false);

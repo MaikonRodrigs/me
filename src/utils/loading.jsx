@@ -33,6 +33,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
+
   position: fixed;
   top: 30%;
   padding: 20px;
@@ -53,7 +55,7 @@ const Dot = styled.div`
 const SpinnerIcon = styled(Spinner3)`
   color: ${(props) => props.theme.colors.secondary};
   width: 30px;
-  margin-bottom: -200px;
+  margin-bottom: 40px;
   animation: ${rotate} 1s linear infinite;
 `;
 
