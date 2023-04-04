@@ -1,11 +1,24 @@
 import styled from "styled-components";
 import Switch from "react-switch";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1025px) {
+    max-width: 1200px;
+  }
+`;
 export const Row = styled.div`
-  height: 120px;
+  position: absolute;
   width: 100%;
- 
+  height: 120px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +45,5 @@ export const RowNavigation = styled.div`
     &:hover {
       font-weight: 600;
     }
-
   }
 `;

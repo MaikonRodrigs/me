@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all .2s linear;
+    transition: all 400ms ease;
+    scroll-behavior: smooth;
 }
 html, border-style, #root {
     max-height: 100vh;
@@ -22,11 +23,10 @@ html, border-style, #root {
     }
     
     html {
-        /* /* background: var(--gray-light); */
-        /* color: var(--secondary); */
-        transition: background .3s ease-in-out;
 
-        background: ${(props) => props.theme.colors.background}; */
+        background: ${(props) => props.theme.colors.background}; 
+        transition: all 400ms ease;
+         scroll-behavior: smooth;
     }
     
     :root {

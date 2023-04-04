@@ -32,6 +32,7 @@ export const Container = styled.div`
   @media (max-width: 720px) {
     width: 85%;
     margin: 0 auto;
+    /* height: 90vh; */
   }
 `;
 
@@ -41,7 +42,7 @@ export const Button = styled.button`
   cursor: pointer;
   opacity: 0;
   animation: ${fadeadndisplay} 1s ease-in-out both;
-  animation-delay: 2s;
+  animation-delay: 3s;
 `;
 
 export const Title = styled.h1`
@@ -67,7 +68,7 @@ export const Text = styled.span`
     text-align: center;
     margin-bottom: 20px;
     position: absolute;
-    top: 20px;
+    top: 30px;
     padding: 20px 0;
   }
 `;
@@ -129,7 +130,7 @@ export const TextMessage = styled.span`
 `;
 
 export const RowCode = styled.div`
-  padding: 20px 20px;
+  padding: 20px 20px 40px;
   width: 500px;
   min-height: 100px;
   height: auto;

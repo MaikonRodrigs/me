@@ -27,7 +27,7 @@ function Header({ toggleTheme }) {
         </S.RowSwitch>
         <S.RowNavigation>
           <a href="#">Home</a>
-          <a href="#">About</a>
+          <a href="#favorites">About</a>
           <a href="#">Contact</a>
         </S.RowNavigation>
       </S.Row>

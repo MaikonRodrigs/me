@@ -18,16 +18,28 @@ const rotate = keyframes`
 	}
 `;
 
+const fadeIn = keyframes`
+0% { opacity: 1}
+/* 50% { opacity: 1; } */
+100% { opacity: 0; background: transparent;
+`;
+
 const Container = styled.div`
   display: flex;
   flex: 1;
   height: 100vh;
-  width: 100vmax;
   justify-content: center;
   align-items: center;
-  z-index: 5;
+  flex-direction: column;
+  z-index: 99;
   background-color: ${(props) => props.theme.colors.background};
-`;
+  backdrop-filter: blur(2rem);
+  animation: ${fadeIn} 4s linear both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  `;
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,6 +52,25 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
+export const Avatar = styled.img`
+  border-radius: 999px;
+  width: 90px;
+  margin-right: 50px;
+  cursor: progress;
+  position: absolute;
+  margin: 0 auto;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+`;
+
+const ColumnsDot = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Dot = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 50%;
@@ -47,6 +78,8 @@ const Dot = styled.div`
   height: 0.5rem;
   margin: 0 0.25rem;
   z-index: 10;
+
+  backdrop-filter: blur(1rem);
 
   animation: ${BounceAnimation} 0.5s linear infinite;
   animation-delay: ${({ delay }) => `${delay}`};
@@ -71,11 +104,16 @@ export const LoadingIcons = () => {
 }
 
 export const LoadingPage = () => {
+  const AvatarName = 'https://avatars.githubusercontent.com/u/70022577?v=4'
+
   return (
     <Container >
-      <Dot delay="0.1s" />
-      <Dot delay="0.2s" />
-      <Dot delay="0.3s" />
+      <Avatar src={AvatarName} />
+      <ColumnsDot>
+        <Dot delay="0.1s" />
+        <Dot delay="0.2s" />
+        <Dot delay="0.3s" />
+      </ColumnsDot>
     </Container >
   )
 }

@@ -7,8 +7,11 @@ export default {
     secondary: "#5c555c",
     codebox: '#C4C4C4',
 
+    section_one: '#F5F5F5',
+    section_two: '#D9D9D9',
+
     text: "#333333",
-    text_secondary: "#C4C4C4",
+    text_secondary: "#888588",
 
     background: "#fffaff",
   },
