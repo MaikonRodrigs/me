@@ -48,6 +48,9 @@ export const Icons = styled.div`
   margin-top: 20px;
   margin-right: 20px;
   cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
 `;
 
 export const YarnIcon = styled(Yarn)`

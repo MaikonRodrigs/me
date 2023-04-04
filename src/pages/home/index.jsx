@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '@/components/header'
 import FirstSection from '@/components/firstsection'
 import Favorites from '@/components/favorites'
+import Footer from '@/components/footer'
 
 import * as S from './styles';
 
@@ -38,10 +39,6 @@ function Home({ toggleTheme }) {
     return <LoadingPage />
   }
 
-
-
-
-
   return (
     <S.Container>
       <Header toggleTheme={toggleTheme} />
@@ -60,8 +57,9 @@ function Home({ toggleTheme }) {
           <S.BehancIcon />
         </S.RowIcons>
       </S.Row >
-      <FirstSection/>
+      <FirstSection />
       <Favorites />
+      <Footer />
     </S.Container>
   )
 }
