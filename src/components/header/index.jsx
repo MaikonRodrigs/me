@@ -26,9 +26,8 @@ function Header({ toggleTheme }) {
           <S.TextTheme>{title}</S.TextTheme>
         </S.RowSwitch>
         <S.RowNavigation>
-          <a href="#">Home</a>
           <a href="#favorites">About</a>
-          <a href="#">Contact</a>
+          <a href="#contact">Contact</a>
         </S.RowNavigation>
       </S.Row>
     </S.Container>

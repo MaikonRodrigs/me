@@ -69,6 +69,7 @@ export const Avatar = styled.img`
   margin-right: 50px;
   animation: ${pulse} 6s infinite;
   cursor: progress;
+ 
 
   @media (max-width: 960px) {
     width: 100px;

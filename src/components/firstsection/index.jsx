@@ -9,6 +9,7 @@ import * as S from './styles';
 function FirstSection() {
   const { title } = useContext(ThemeContext);
 
+
   const text = `About`
   const jsonFetch = `{
     "informations": {

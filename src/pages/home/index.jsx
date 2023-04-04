@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useLayoutEffect, useState, useRef, useEffect } from 'react';
 import { ThemeContext } from 'styled-components'
 import { LoadingPage } from '@/utils/loading'
 import { useNavigate } from 'react-router-dom';
@@ -12,28 +12,48 @@ import * as S from './styles';
 
 
 function Home({ toggleTheme }) {
+  const [loading, setLoading] = useState(false)
   const { title } = useContext(ThemeContext);
-  const Avatar = 'https://avatars.githubusercontent.com/u/70022577?v=4'
-  const User = '{ Maikon }'
+  const infos = {
+    git: 'https://github.com/maikonrodrigs',
+    linkedin: 'https://www.linkedin.com/in/maikonrodrigs/',
+    behance: 'https://www.behance.net/maikonrodrigues',
+    avatar: 'https://avatars.githubusercontent.com/u/70022577?v=4',
+    name: 'Your Name Completed'
+  }
+  const Avatar = ''
+  const User = '{ YourName }'
   const getLocalStorage = localStorage.getItem('theme');
 
-  const [loading, setLoading] = useState(false)
 
 
-  // useEffect(() => {
-  //   setLoading(true)
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 4000)
-  // }, [])
+  useLayoutEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
 
   const navigate = useNavigate()
   useEffect(() => {
-    // if (!getLocalStorage) {
-    //   navigate('/')
-    // }
+    if (!getLocalStorage) {
+      navigate('/')
+    }
 
   }, [])
+
+  function openURL(url) {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      window.open(url, "_blank")
+    }, 1500)
+  }
+
+  function clearCache() {
+    localStorage.clear()
+    console.log('Clear local storage');
+  }
 
   if (loading) {
     return <LoadingPage />
@@ -45,16 +65,16 @@ function Home({ toggleTheme }) {
       <S.Row>
         <S.RowInfo>
           <S.RowTexts>
-            <S.Text>Hi, {User}my name is Maikon</S.Text>
+            <S.Text>Hi, {infos.name} my name is Maikon</S.Text>
             <S.Title>I'm Front End .</S.Title>
             <S.Text>JavaScript, TypeScript and ReactJS and Native📱</S.Text>
           </S.RowTexts>
-          <S.Avatar src={Avatar} />
+          <S.Avatar src={infos.avatar} onClick={clearCache} />
         </S.RowInfo>
         <S.RowIcons>
-          <S.GithubIcon />
-          <S.LinkedinIcon />
-          <S.BehancIcon />
+          <S.GithubIcon onClick={() => openURL(infos.git)} />
+          <S.LinkedinIcon onClick={() => openURL(infos.linkedin)} />
+          <S.BehancIcon onClick={() => openURL(infos.behance)} />
         </S.RowIcons>
       </S.Row >
       <FirstSection />

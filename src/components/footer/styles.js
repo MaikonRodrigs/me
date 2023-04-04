@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.section_two};
@@ -18,6 +18,7 @@ export const Line = styled.div`
 export const Row = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 20px;
 `;
 
 export const ContactRow = styled.div`
@@ -26,17 +27,22 @@ export const ContactRow = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Text = styled.span``;
-export const Tel = styled.span`
+
+const TEXTS = css`
+  color: ${({ theme }) => theme.colors.text_secondary};
   cursor: pointer;
   margin-top: 10px;
   &:hover {
     opacity: 0.5;
   }
 `;
+
+export const Text = styled.span`
+  ${TEXTS}
+`;
+export const Tel = styled.span`
+  ${TEXTS}
+`;
 export const Email = styled.span`
-  cursor: pointer;
-  &:hover {
-    opacity: 0.5;
-  }
+  ${TEXTS}
 `;

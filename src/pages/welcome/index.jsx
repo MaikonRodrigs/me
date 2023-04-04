@@ -15,9 +15,9 @@ function Welcome({ toggleTheme }) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // if (getLocalStorage) {
-    //   navigate('/home')
-    // }
+    if (getLocalStorage) {
+      navigate('/home')
+    }
   }, [])
 
   function waitingForStep(i) {
@@ -50,23 +50,26 @@ function Welcome({ toggleTheme }) {
 
 
   function stepMessage(i) {
-    const message = 'Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️'
-    const message2 = 'Technology enthusiast, passionate about programming and passionate about cats.'
-    const message3 = 'I promise not to steal your bank details, Im just a programmer and not a hacker :('
-    const react = `import React from 'react'`
-    const code = `
-            <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <h1 style={{ color: 'themeColor.heading' }}>
-                Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️ </br>
-                Technology enthusiast, passionate about programming and passionate about cats.
-              </h1>
-              <p style={{ color: 'themeColor.heading' }}>
-                I promise not to steal your bank details, Im just a programmer and not a hacker :(
-              </p>
-            </div>
-          )
-        }
-    `
+
+    const infos = {
+      message: 'Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️',
+      message2: 'Technology enthusiast, passionate about programming and passionate about cats.',
+      message3: 'I promise not to steal your bank details, Im just a programmer and not a hacker :(',
+      react: `import React from 'react'`,
+      code: `
+              <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <h1 style={{ color: 'themeColor.heading' }}>
+                  Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️ </br>
+                  Technology enthusiast, passionate about programming and passionate about cats.
+                </h1>
+                <p style={{ color: 'themeColor.heading' }}>
+                  I promise not to steal your bank details, Im just a programmer and not a hacker :(
+                </p>
+              </div>
+            )
+          }
+      `
+    }
     setTimeout(() => {
       setStep(i)
     }, 17500)
@@ -74,21 +77,21 @@ function Welcome({ toggleTheme }) {
       <S.Container>
         <S.Text>
           <TypeLetter
-            text={message}
+            text={infos.message}
             noCursor
           />
           <TypeLetter
-            text={message2}
+            text={infos.message2}
             delay={4250}
             noCursor
           />
         </S.Text>
-        <S.TextMessage>
+        <S.TextFun>
           <TypeLetter
-            text={message3}
+            text={infos.message3}
             delay={9500}
           />
-        </S.TextMessage>
+        </S.TextFun>
         <S.RowCode>
           <S.CodeHeader>
             <S.Dots>
@@ -101,7 +104,7 @@ function Welcome({ toggleTheme }) {
           <S.TextMessage>#CodeInline</S.TextMessage>
           <S.CodeText>
             <TypeLetter
-              text={react}
+              text={infos.react}
               align
               time="30"
               noCursor
@@ -111,7 +114,7 @@ function Welcome({ toggleTheme }) {
           <S.CodeText>
             <TypeLetter
               delay={1500}
-              text={code}
+              text={infos.code}
               align
               time="20"
             />
@@ -122,16 +125,15 @@ function Welcome({ toggleTheme }) {
   }
 
   function stepFinaly(i) {
-    finishWelcome()
     setTimeout(() => {
-      setStep(i)
-    }, 5000)
+      finishWelcome()
+    }, 1500)
     return (
       <S.Container>
-        <LoadingIcons />
-        <S.Title>
+        {/* <LoadingIcons /> */}
+        <S.TitleFinish>
           Let's go...
-        </S.Title>
+        </S.TitleFinish>
       </S.Container>
     )
   }

@@ -6,7 +6,7 @@ const fade = keyframes`
   /* from { opacity: 0} to { opacity: 1} */
   0% { opacity:   0}
   50% { opacity:  1}
-  100% { opacity:  1;}
+  100% { opacity:  0;}
 `;
 
 const fadeadndisplay = keyframes`
@@ -32,7 +32,6 @@ export const Container = styled.div`
   @media (max-width: 720px) {
     width: 85%;
     margin: 0 auto;
-    /* height: 90vh; */
   }
 `;
 
@@ -47,7 +46,19 @@ export const Button = styled.button`
 
 export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.text};
-  animation: ${fadeadndisplay} 3s ease-in-out;
+  animation: ${fadeadndisplay} 2s ease-in-out;
+  animation-fill-mode: both;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+`;
+
+export const TitleFinish = styled.h1`
+  color: ${({ theme }) => theme.colors.text};
+  animation: ${fade} 5s ease-in-out;
   animation-fill-mode: both;
 
   @media (max-width: 720px) {
@@ -107,7 +118,7 @@ export const TextWaiting = styled.h1`
   }
 `;
 export const TextSecondary = styled.span`
-  font-size: 12px;
+  font-size: 16px;
   color: ${(props) => props.theme.colors.text};
   animation: ${fadeadndisplay} 3s ease-in-out;
   margin-top: 10px;
@@ -120,6 +131,17 @@ export const TextSecondary = styled.span`
 
 export const TextMessage = styled.span`
   font-size: 14px;
+  color: ${(props) => props.theme.colors.secondary};
+  margin-top: 20px;
+
+  @media (max-width: 720px) {
+    text-align: center;
+    margin-top: -180px;
+  }
+`;
+
+export const TextFun = styled.span`
+  font-size: 17px;
   color: ${(props) => props.theme.colors.secondary};
   margin-top: 20px;
 
