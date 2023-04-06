@@ -21,15 +21,15 @@ function Home({ toggleTheme }) {
   const { loading, setLoading, modal, setModal, setProject } = useContext(GlobalContext)
   const getLocalStorage = localStorage.getItem('theme')
 
-  // useLayoutEffect(() => {
-  //   setLoading(true)
-  //   if (!getLocalStorage) {
-  //     navigate('/')
-  //   }
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 3000)
-  // }, [])
+  useLayoutEffect(() => {
+    setLoading(true)
+    if (!getLocalStorage) {
+      navigate('/')
+    }
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
 
   const navigate = useNavigate()
 

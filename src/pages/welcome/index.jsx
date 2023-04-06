@@ -42,7 +42,7 @@ function Welcome({ toggleTheme }) {
     return (
       <S.Container>
         <LoadingIcons />
-        <S.TextWaiting>Wait i'am saving to local storage as per your settings.</S.TextWaiting>
+        <S.TextWaiting>Wait i'm saving to local storage as per your settings.</S.TextWaiting>
         <S.TextSecondary>if it takes time, it's the <span>back-end </span>fault, lol</S.TextSecondary>
       </S.Container>
     )
@@ -52,14 +52,14 @@ function Welcome({ toggleTheme }) {
   function stepMessage(i) {
 
     const infos = {
-      message: 'Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️',
+      message: 'Hy, my name is Maikon, I am FrontEnd JavaScript and React ❤️',
       message2: 'Technology enthusiast, passionate about programming and passionate about cats.',
       message3: 'I promise not to steal your bank details, Im just a programmer and not a hacker :(',
       react: `import React from 'react'`,
       code: `
               <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <h1 style={{ color: 'themeColor.heading' }}>
-                  Hy, my name is Maikon, I am FrontEnd JavaScript, and React ❤️ </br>
+                  Hy, my name is Maikon, I am FrontEnd JavaScript and React ❤️ </br>
                   Technology enthusiast, passionate about programming and passionate about cats.
                 </h1>
                 <p style={{ color: 'themeColor.heading' }}>
@@ -130,9 +130,8 @@ function Welcome({ toggleTheme }) {
     }, 1500)
     return (
       <S.Container>
-        {/* <LoadingIcons /> */}
         <S.TitleFinish>
-          Let's go...
+          Ok, Let's go...
         </S.TitleFinish>
       </S.Container>
     )
@@ -175,7 +174,6 @@ function Welcome({ toggleTheme }) {
             />
             <S.TextThemeActive>{title}</S.TextThemeActive>
           </S.Row>
-          {/* <S.Button onClick={() => finishWelcome()}>Continue</S.Button> */}
           <S.Button onClick={() => setStep(3)}>Continue</S.Button>
         </S.Container>
       )
