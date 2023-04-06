@@ -1,33 +1,21 @@
 import styled from "styled-components";
+import { device } from "@/styles/breakpoints";
 import { VisualStudio } from "@styled-icons/boxicons-logos/VisualStudio";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 export const Container = styled.div`
-  height: 680px;
   width: 100%;
   position: relative;
-  background: ${({ theme }) => theme.colors.section_two};
-  @media (max-width: 960px) {
-    background: none;
-    height: auto;
-  }
-`;
+  `;
 
 export const Row = styled.div`
+  background: ${({ theme }) => theme.colors.section_two};
   position: absolute;
-  margin-top: -490px;
+  height: 550px;
   width: 100%;
-
-  @media (max-width: 425px) {
-    margin-top: -20px;
-  }
-
-  @media (max-width: 720px) {
-    margin-top: -370px;
-  }
-
-  @media (max-height: 720px) {
-    margin-top: -270px;
+  bottom: -200px;
+  @media ${device.laptop} {
+    background: none;
   }
 
 `;
@@ -35,7 +23,7 @@ export const Row = styled.div`
 export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: 600;
-  margin-left: -7px;
+  margin-top: 60px;
   &::after {
     content: "/>";
     margin-left: 20px;
@@ -45,18 +33,17 @@ export const Title = styled.h1`
 export const Code = styled.div`
   height: 900px;
   width: 100%;
-`;
 
-export const Wrangler = styled.div`
-  max-width: 960px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0;
 
-  @media (max-width: 1024px) {
-    max-width: 960px;
+  @media ${device.laptop} {
+    height: 700px;
   }
-
-  @media (min-width: 1025px) {
-    max-width: 1200px;
+  @media ${device.laptop} {
+    height: 700px;
   }
 `;
 
@@ -64,7 +51,7 @@ export const RowSyntax = styled.div`
   margin-top: 50px;
   position: relative;
   width: 100%;
-  margin-left: -10px;
+  margin-left: -5px;
 
   @media (max-width: 960px) {
     margin-top: 20px;
@@ -75,10 +62,15 @@ export const SYNTAX = styled(SyntaxHighlighter)`
   box-shadow: var(--shadow);
   width: 100%;
   text-overflow: ellipsis;
-  @media (max-width: 960px) {
-    width: 100%;
+
+  @media ${device.tabletM} {
+
+    font-size: 20px !important;
+  }
+  @media ${device.mobileM} {
     font-size: 15px !important;
   }
+
 `;
 
 export const Vscode = styled(VisualStudio)`

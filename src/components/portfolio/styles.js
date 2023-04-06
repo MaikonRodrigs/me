@@ -14,46 +14,67 @@ export const Container = styled.div`
 `;
 
 export const Row = styled.div`
-  padding: 200px 0 80px;
-  position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  @media ${device.laptop} {
-    padding: 40px 0 40px;
-    margin-top: 380px;
-  }
-
-  @media ${device.tabletM} {
-    margin-top: 320px;
-  }
-  @media ${device.mobileM} {
-    margin-top: 120px;
-  }
-  @media ${device.tablet} {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+  padding-top: 40px;
+  align-items: center;
+  /* flex-direction: column; */
 `;
 
 export const RowText = styled.div``;
 export const Title = styled.h1`
-  font-weight: 400;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.secondary};
   span {
     margin-left: 20px;
   }
 `;
 
-export const Description = styled.span`
-  color: ${({ theme }) => theme.colors.secondary};
+export const Items = styled.div`
+  display: flex;
+  padding: 30px 0;
+  gap: 10px;
+`;
+
+export const ImageRow = styled.div`
+  width: 60px;
+  height: 60px;
+  padding: 0 10px;
+  border-radius: 4px;
+  /* filter: blur(1px) grayscale(100%); */
+  cursor: pointer;
+  margin-left: -20px;
+
+  clip-path: polygon(20% 0, 100% 0%, 80% 100%, 0% 100%);
+  background-color: ${({ theme }) => theme.colors.section_one};
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: ${({ theme }) => theme.colors.secondary};
+    font-size: 22px;
+  }
+
+  &:hover {
+    filter: unset;
+    width: 90px;
+    height: 150px;
+    margin-top: -100px;
+    border-radius: 20px;
+    /* margin-right: 20px;
+    margin-left: 20px; */
+    border: 1px solid white;
+  }
 `;
 
 const ICONS = css`
-  width: 30px;
+  width: 50px;
   color: ${({ theme }) => theme.colors.secondary};
   margin-right: 10px;
 `;

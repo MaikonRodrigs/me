@@ -12,7 +12,7 @@ function Favorites() {
   const URL = {
     yarn: 'https://yarnpkg.com/',
     firebase: 'https://firebase.google.com/?hl=pt',
-    styledComponents: 'https://styled-components.com/',
+    styledComponents: 'https://styled-components.com/', 
     hyper: 'https://hyper.is/'
   }
 
@@ -34,6 +34,7 @@ function Favorites() {
           <S.Description>this site uses this stack</S.Description>
         </S.RowText>
         <S.Icons>
+          <S.ReactLogoIcon onClick={() => openURL(URL.hyper)} />
           <S.YarnIcon onClick={() => openURL(URL.yarn)} />
           <S.FirebaseIcon onClick={() => openURL(URL.firebase)} />
           <S.StyledcomponentsIcon onClick={() => openURL(URL.styledComponents)} />

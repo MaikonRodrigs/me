@@ -23,8 +23,9 @@ html, border-style, #root {
     }
     
     html {
+    
 
-        background: ${(props) => props.theme.colors.background}; 
+        background: ${({ theme }) => theme.colors.section_two};
         transition: all 400ms ease;
          scroll-behavior: smooth;
     }
