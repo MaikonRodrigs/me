@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+import { UseDataContext } from '@/hooks/useContext'
+import usePersistedState from '@/hooks/usePersistedState'
+
 import Home from './pages/home/index'
 import Welcome from './pages/welcome'
 
@@ -11,8 +14,6 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '@/styles/GlobalStyle'
 
 
-import usePersistedState from '@/hooks/usePersistedState'
-
 function App() {
   const [theme, setTheme] = usePersistedState('theme', light)
 
@@ -20,15 +21,17 @@ function App() {
     setTheme(theme.title === "light" ? dark : light)
   };
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Routes>
-          <Route path="/" element={<Welcome toggleTheme={toggleTheme} />} />
-          <Route path="/home" element={<Home toggleTheme={toggleTheme} />} />
-        </Routes>
-      </ThemeProvider>
-    </BrowserRouter >
+    <UseDataContext>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Routes>
+            <Route path="/" element={<Welcome toggleTheme={toggleTheme} />} />
+            <Route path="/home" element={<Home toggleTheme={toggleTheme} />} />
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter >
+    </UseDataContext>
   )
 }
 

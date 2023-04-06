@@ -12,7 +12,6 @@ function Presentation() {
     linkedin: 'https://www.linkedin.com/in/maikonrodrigs/',
     behance: 'https://www.behance.net/maikonrodrigues',
     avatar: 'https://avatars.githubusercontent.com/u/70022577?v=4',
-    name: 'Your Name Completed'
   }
 
   function openURL(url) {
@@ -37,7 +36,7 @@ function Presentation() {
       <S.Row>
         <S.RowInfo>
           <S.RowTexts>
-            <S.Text>Hi, {infos.name} my name is Maikon</S.Text>
+            <S.Text>Hi, my name is Maikon,</S.Text>
             <S.Title>I'm Front End .</S.Title>
             <S.Text>JavaScript, TypeScript and ReactJS and Native📱</S.Text>
           </S.RowTexts>

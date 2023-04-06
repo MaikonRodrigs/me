@@ -7,20 +7,19 @@ function Portfolio(props) {
   const infos = {
     title: 'Portfolio',
     code: '/>',
-    img: 'https://media.licdn.com/dms/image/C4D22AQF0RueCxf3ATw/feedshare-shrink_1280/0/1679434036138?e=1683763200&v=beta&t=V9NJ1grpPPyA_j33W_vZ4oqkdxeebt6y7A8vh9t03zo'
   }
   return (
     <S.Container>
       <S.Row>
         <S.Title>{infos.title} <span>{infos.code}</span></S.Title>
         <S.Items>
-          <S.ImageRow onClick={props.onClick}>
+          <S.ImageRow onClick={props.first} >
             <span>1</span>
           </S.ImageRow>
-          <S.ImageRow >
+          <S.ImageRow onClick={props.second}>
             <span>2</span>
           </S.ImageRow>
-          <S.ImageRow >
+          <S.ImageRow onClick={props.third}>
             <span>3</span>
           </S.ImageRow>
         </S.Items>

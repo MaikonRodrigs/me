@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { LoadingPage } from '@/utils/loading'
+import { GlobalContext } from '@/hooks/useContext'
+
 
 import * as S from './styles';
 
 function Favorites() {
-  const [loading, setLoading] = useState(false)
+  const { loading, setLoading} = useContext(GlobalContext)
 
   const titleText = 'Favorite'
   const restText = 'Stack'

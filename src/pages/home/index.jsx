@@ -1,8 +1,10 @@
-import React, { useContext, useLayoutEffect, useState, useRef, useEffect } from 'react';
+import React, { useContext, useLayoutEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components'
-import { LoadingPage } from '@/utils/loading'
+import { GlobalContext } from '@/hooks/useContext'
+
 import { useNavigate } from 'react-router-dom';
 
+import { LoadingPage } from '@/utils/loading'
 import Header from '@/components/header'
 import FirstSection from '@/components/firstsection'
 import Portfolio from '@/components/portfolio'
@@ -15,13 +17,15 @@ import * as S from './styles';
 
 
 function Home({ toggleTheme }) {
-  const [loading, setLoading] = useState(false)
-  const [modal, setModal] = useState(false);
-  const { title } = useContext(ThemeContext);
-  const getLocalStorage = localStorage.getItem('theme');
+  const { title } = useContext(ThemeContext)
+  const { loading, setLoading, modal, setModal, setProject } = useContext(GlobalContext)
+  const getLocalStorage = localStorage.getItem('theme')
 
   useLayoutEffect(() => {
     setLoading(true)
+    if (!getLocalStorage) {
+      navigate('/')
+    }
     setTimeout(() => {
       setLoading(false)
     }, 3000)
@@ -29,16 +33,18 @@ function Home({ toggleTheme }) {
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (!getLocalStorage) {
-      navigate('/')
-    }
-  }, [])
-
   function handleModal() {
     setModal(!modal)
   }
 
+  function setCurrentProject(i) {
+    setProject(i)
+    setModal(!modal)
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }
 
   if (loading) {
     return <LoadingPage />
@@ -48,14 +54,16 @@ function Home({ toggleTheme }) {
     <S.Container>
       <Modal
         display={modal}
-        onClick={handleModal} />
+        onClick={handleModal}
+      />
       <Header toggleTheme={toggleTheme} />
       <Presentation />
       <FirstSection />
       <Favorites />
       <Portfolio
-        source="1"
-        onClick={handleModal}
+        first={() => setCurrentProject(1)}
+        second={() => setCurrentProject(2)}
+        third={() => setCurrentProject(3)}
       />
       <Footer />
     </S.Container>
