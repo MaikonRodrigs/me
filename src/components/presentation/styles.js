@@ -41,10 +41,14 @@ export const RowInfo = styled.div`
 export const RowTexts = styled.div``;
 export const Text = styled.span`
   color: ${({ theme }) => theme.colors.text_secondary};
-  display: flex;
+  /* display: flex; */
   font-size: 22px;
   align-items: center;
   margin-bottom: -10px;
+
+  span {
+    color: ${({ theme }) => theme.colors.highlight};
+  }
 `;
 export const Title = styled.h1`
   font-size: 82px;
@@ -61,12 +65,11 @@ export const Avatar = styled.img`
   /* animation: ${border} 1s infinite; */
   cursor: progress;
 
-  box-shadow: 
-    0 0 0 2px white,
+  box-shadow: 0 0 0 2px white,
     0 0 0 12px ${({ theme }) => theme.colors.background},
-    0 0 0 13px rgba(0, 0, 0, .14),
+    0 0 0 13px rgba(0, 0, 0, 0.14),
     0 0 0 32px ${({ theme }) => theme.colors.background},
-    0 0 0 33px rgba(0, 0, 0, .05);
+    0 0 0 33px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 960px) {
     width: 100px;

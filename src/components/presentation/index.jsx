@@ -38,7 +38,7 @@ function Presentation() {
           <S.RowTexts>
             <S.Text>Hi, my name is Maikon,</S.Text>
             <S.Title>I'm Front End .</S.Title>
-            <S.Text>JavaScript, TypeScript and ReactJS and Native📱</S.Text>
+            <S.Text>JavaScript, TypeScript, <span>React</span> and Native📱</S.Text>
           </S.RowTexts>
           <S.Avatar src={infos.avatar} onClick={clearCache} />
         </S.RowInfo>

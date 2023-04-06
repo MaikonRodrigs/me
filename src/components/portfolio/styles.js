@@ -14,17 +14,16 @@ export const Container = styled.div`
 `;
 
 export const Row = styled.div`
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  padding-top: 40px;
   align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
 `;
 
-export const RowText = styled.div``;
+export const RowText = styled.div`
+`;
 export const Title = styled.h1`
   font-weight: 600;
   color: ${({ theme }) => theme.colors.secondary};

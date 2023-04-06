@@ -14,13 +14,14 @@ export const Container = styled.div`
 `;
 
 export const Row = styled.div`
-  padding: 200px 0 80px;
+  padding: 200px 0 40px;
   position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
 
   @media ${device.laptop} {
     padding: 40px 0 40px;
@@ -28,9 +29,11 @@ export const Row = styled.div`
   }
 
   @media ${device.tabletM} {
+    padding: 40px 0 90px;
     margin-top: 320px;
   }
   @media ${device.mobileM} {
+    padding: 40px 0 90px;
     margin-top: 120px;
   }
   @media ${device.tablet} {
@@ -39,6 +42,13 @@ export const Row = styled.div`
   }
 `;
 
+export const FavoritesRow = styled.div`
+  @media ${device.tabletM} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 export const RowText = styled.div``;
 export const Title = styled.h1`
   font-weight: 400;

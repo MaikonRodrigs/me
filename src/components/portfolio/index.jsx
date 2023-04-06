@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { LoadingPage } from '@/utils/loading'
+import React from 'react';
 
 import * as S from './styles';
 

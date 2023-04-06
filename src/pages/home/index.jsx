@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect, useState } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 import { ThemeContext } from 'styled-components'
 import { GlobalContext } from '@/hooks/useContext'
 
@@ -21,15 +21,15 @@ function Home({ toggleTheme }) {
   const { loading, setLoading, modal, setModal, setProject } = useContext(GlobalContext)
   const getLocalStorage = localStorage.getItem('theme')
 
-  useLayoutEffect(() => {
-    setLoading(true)
-    if (!getLocalStorage) {
-      navigate('/')
-    }
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000)
-  }, [])
+  // useLayoutEffect(() => {
+  //   setLoading(true)
+  //   if (!getLocalStorage) {
+  //     navigate('/')
+  //   }
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 3000)
+  // }, [])
 
   const navigate = useNavigate()
 
@@ -37,14 +37,7 @@ function Home({ toggleTheme }) {
     setModal(!modal)
   }
 
-  function setCurrentProject(i) {
-    setProject(i)
-    setModal(!modal)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }
+
 
   if (loading) {
     return <LoadingPage />
@@ -60,11 +53,6 @@ function Home({ toggleTheme }) {
       <Presentation />
       <FirstSection />
       <Favorites />
-      <Portfolio
-        first={() => setCurrentProject(1)}
-        second={() => setCurrentProject(2)}
-        third={() => setCurrentProject(3)}
-      />
       <Footer />
     </S.Container>
   )
