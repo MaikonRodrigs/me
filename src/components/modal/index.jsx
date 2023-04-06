@@ -1,11 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
-import PokemonProject from '@/assets/PokemonAPI_MaikoRodrigs.png'
+import { LoadingPage } from '@/utils/loading'
 import { GlobalContext } from '@/hooks/useContext'
 import * as S from './styles';
 
 function Modal(props) {
 
-  const { project } = useContext(GlobalContext)
+  const { project, loading, setLoading } = useContext(GlobalContext)
+
+  function openUrl(url) {
+    setLoading(true)
+    setTimeout(() => {
+      window.open(url, "_blank")
+      setLoading(false)
+    }, 1000)
+  }
+
+  if (loading) {
+    return <LoadingPage />
+  }
 
   switch (project) {
     case 1: {
@@ -18,8 +30,9 @@ function Modal(props) {
             <S.Infos>
               <S.DescriptionRow>
                 <S.Text>PokeApi</S.Text>
-                <S.Url href='https://pokeapi.co/'
-                  target="_blank">https://pokeapi.co/</S.Url>
+                <S.Url
+                  onClick={() => openUrl('https://pokeapi.co/')}>
+                  Fhttps://pokeapi.co/</S.Url>
                 <S.Description>Project ReactJS, database - Public Pokemon API</S.Description>
                 <br />
                 <br />
@@ -39,11 +52,13 @@ function Modal(props) {
                 </S.Description>
                 <br />
                 <S.Text>Link project:</S.Text>
-                <S.Url href='https://pokedexmaikonrodrigs.web.app/' target="_blank" >https://pokedexmaikonrodrigs.web.app/</S.Url>
+                <S.Url onClick={() => openUrl('https://pokedexmaikonrodrigs.web.app/')} >
+                  https://pokedexmaikonrodrigs.web.app/</S.Url>
                 <br />
                 <br />
                 <S.Description>Repositorio:</S.Description>
-                <S.Url href='https://github.com/MaikonRodrigs/Pokedex_API' target="_blank" >https://github.com/MaikonRodrigs/Pokedex_API</S.Url>
+                <S.Url onClick={() => openUrl('https://github.com/MaikonRodrigs/Pokedex_API')}>
+                  Fhttps://github.com/MaikonRodrigs/Pokedex_API</S.Url>
               </S.DescriptionRow>
             </S.Infos>
           </S.Card>
@@ -60,8 +75,8 @@ function Modal(props) {
             <S.Infos>
               <S.DescriptionRow>
                 <S.Text>THEMOVIE</S.Text>
-                <S.Url href='https://developers.themoviedb.org/3/getting-started/introduction'
-                  target="_blank">https://developers.themoviedb.org</S.Url>
+                <S.Url onClick={() => openUrl('https://developers.themoviedb.org/3/getting-started/introduction')}>
+                  https://developers.themoviedb.org</S.Url>
                 <br />
                 <br />
                 <S.Description>Project ReactJS, database - Public TMDB API</S.Description>
@@ -83,11 +98,13 @@ function Modal(props) {
                 </S.Description>
                 <br />
                 <S.Text>Link project:</S.Text>
-                <S.Url href='https://moviesmaikonrodrigs.web.app/' target="_blank" >https://moviesmaikonrodrigs.web.app/</S.Url>
+                <S.Url onClick={() => openUrl('https://moviesmaikonrodrigs.web.app/')} >
+                  https://moviesmaikonrodrigs.web.app/</S.Url>
                 <br />
                 <br />
                 <S.Description>Repositorio:</S.Description>
-                <S.Url href='https://github.com/MaikonRodrigs/THMDB_API' target="_blank" >https://github.com/MaikonRodrigs/THMDB_API</S.Url>
+                <S.Url onClick={() => openUrl('https://github.com/MaikonRodrigs/THMDB_API')} F >
+                  https://github.com/MaikonRodrigs/THMDB_API</S.Url>
               </S.DescriptionRow>
             </S.Infos>
           </S.Card>
@@ -104,8 +121,8 @@ function Modal(props) {
             <S.Infos>
               <S.DescriptionRow>
                 <S.Text>GITHUB</S.Text>
-                <S.Url href='https://docs.github.com/pt/get-started'
-                  target="_blank">https://docs.github.com/pt/get-started</S.Url>
+                <S.Url onClick={() => openUrl('https://docs.github.com/pt/get-started')}>
+                  https://docs.github.com/pt/get-started</S.Url>
                 <br />
                 <br />
                 <S.Description>Project ReactJS, database - Public Github API</S.Description>
@@ -130,11 +147,13 @@ function Modal(props) {
                 </S.Description>
                 <br />
                 <S.Text>Link project:</S.Text>
-                <S.Url href='https://githubsearchname.web.app/' target="_blank" >https://githubsearchname.web.app/</S.Url>
+                <S.Url onClick={() => openUrl('https://githubsearchname.web.app/')} >
+                  https://githubsearchname.web.app/</S.Url>
                 <br />
                 <br />
                 <S.Description>Repositorio:</S.Description>
-                <S.Url href='https://github.com/MaikonRodrigs/Github_API' target="_blank" >https://github.com/MaikonRodrigs/Github_API</S.Url>
+                <S.Url onClick={() => openUrl('https://github.com/MaikonRodrigs/Github_API')}>
+                  https://github.com/MaikonRodrigs/Github_API</S.Url>
               </S.DescriptionRow>
             </S.Infos>
           </S.Card>
@@ -145,6 +164,3 @@ function Modal(props) {
 }
 
 export default Modal;
-{/* <iframe src="https://moviesmaikonrodrigs.web.app/" allow="autoplay"></iframe> */ }
-{/* <iframe src="https://moviesmaikonrodrigs.web.app/" allow="autoplay"></iframe> */ }
-{/* <iframe src="https://pokedexmaikonrodrigs.web.app" allow="autoplay"></iframe> */ }

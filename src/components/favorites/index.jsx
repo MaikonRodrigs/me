@@ -12,6 +12,7 @@ function Favorites() {
   const restText = 'Stack'
   const c = '/>'
   const URL = {
+    react: 'https://react.dev/',
     yarn: 'https://yarnpkg.com/',
     firebase: 'https://firebase.google.com/?hl=pt',
     styledComponents: 'https://styled-components.com/', 
@@ -36,7 +37,7 @@ function Favorites() {
           <S.Description>this site uses this stack</S.Description>
         </S.RowText>
         <S.Icons>
-          <S.ReactLogoIcon onClick={() => openURL(URL.hyper)} />
+          <S.ReactLogoIcon onClick={() => openURL(URL.react)} />
           <S.YarnIcon onClick={() => openURL(URL.yarn)} />
           <S.FirebaseIcon onClick={() => openURL(URL.firebase)} />
           <S.StyledcomponentsIcon onClick={() => openURL(URL.styledComponents)} />

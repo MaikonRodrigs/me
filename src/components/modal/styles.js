@@ -43,6 +43,8 @@ export const Text = styled.h1`
 
 export const Url = styled.a`
   color: ${({ theme }) => theme.colors.text};
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 export const ProjectLink = styled.div``;
