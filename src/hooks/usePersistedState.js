@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
 
-function usePersistedState(key, initialState) {
-  const [state, setState] = useState(() => {
-    const storageValue = localStorage.getItem(key);
-
-    if (storageValue) {
-      return JSON.parse(storageValue);
-    } else {
-      return initialState;
-    }
-  });
+function usePersistedState(key, initialState, delay) {
+  const [state, setState] = useState(initialState);
+  const [shouldSave, setShouldSave] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      localStorage.setItem(key, JSON.stringify(state));
-    }, 500)
-  }, [key, state]);
+    const timeoutId = setTimeout(() => {
+      setShouldSave(true);
+    }, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, [delay]);
+
+  useEffect(() => {
+    if (shouldSave) {
+      try {
+        localStorage.setItem(key, JSON.stringify(state));
+      } catch (error) {
+        console.error("Error saving state to localStorage:", error);
+      }
+    }
+  }, [key, state, shouldSave]);
 
   return [state, setState];
 }

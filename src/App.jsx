@@ -15,7 +15,7 @@ import { GlobalStyle } from '@/styles/GlobalStyle'
 
 
 function App() {
-  const [theme, setTheme] = usePersistedState('theme', light)
+  const [theme, setTheme] = usePersistedState('theme', light, 5000)
 
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light)
