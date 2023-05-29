@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function usePersistedState(key, initialState, delay) {
   const [state, setState] = useState(initialState);
-  const [shouldSave, setShouldSave] = useState(false);
+  const [shouldSave, setShouldSave] = useState(localStorage.getItem(key));
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
