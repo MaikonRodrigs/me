@@ -52,24 +52,20 @@ export const Text = styled.span`
 `;
 export const Title = styled.h1`
   font-size: 82px;
-  font-weight: 400;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.secondary};
+  /* margin-bottom: -1px; */
   @media (max-width: 960px) {
     font-size: 52px;
   }
 `;
+
 export const Avatar = styled.img`
   border-radius: 999px;
   width: 140px;
   margin-right: 50px;
   /* animation: ${border} 1s infinite; */
   cursor: progress;
-
-  box-shadow: 0 0 0 2px white,
-    0 0 0 12px ${({ theme }) => theme.colors.background},
-    0 0 0 13px rgba(0, 0, 0, 0.14),
-    0 0 0 32px ${({ theme }) => theme.colors.background},
-    0 0 0 33px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 960px) {
     width: 100px;

@@ -38,7 +38,7 @@ function Welcome({ toggleTheme }) {
   function stepLocalStorage(i) {
     setTimeout(() => {
       setStep(i)
-    }, 5000)
+    }, 8000)
     return (
       <S.Container>
         <LoadingIcons />
@@ -72,7 +72,7 @@ function Welcome({ toggleTheme }) {
     }
     setTimeout(() => {
       setStep(i)
-    }, 17500)
+    }, 21500)
     return (
       <S.Container>
         <S.Text>
