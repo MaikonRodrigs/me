@@ -17,7 +17,7 @@ function FirstSection() {
       "year": 33,
       "nacionality": "Brazilian",
       "home": {
-        "country": "Brazilian",
+        "country": "Brazil",
         "city": "Sao Paulo"
       },
       "other": {
