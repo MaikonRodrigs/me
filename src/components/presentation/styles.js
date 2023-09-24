@@ -1,6 +1,8 @@
 import styled, { keyframes, css } from "styled-components";
 import { Github, Behance, Linkedin } from "@styled-icons/boxicons-logos/";
 
+import { DocumentArrowUp } from "@styled-icons/fluentui-system-filled/DocumentArrowUp";
+
 const fade = keyframes`
   from { opacity: 0} to { opacity: 1}
 `;
@@ -39,22 +41,45 @@ export const RowInfo = styled.div`
 `;
 
 export const RowTexts = styled.div``;
+
+export const RowDownload = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  align-items: center;
+`;
+
 export const Text = styled.span`
   color: ${({ theme }) => theme.colors.text_secondary};
-  /* display: flex; */
   font-size: 22px;
   align-items: center;
-  margin-bottom: -10px;
+  padding-bottom: -20px;
 
   span {
     color: ${({ theme }) => theme.colors.highlight};
   }
 `;
+
+export const IconDownload = styled(DocumentArrowUp)`
+  width: 25px;
+  margin-right: 5px;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const TextDownload = styled.div`
+  color: ${({ theme }) => theme.colors.text_secondary};
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover {
+    color: ${({ theme }) => theme.colors.highlight};
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 82px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.secondary};
-  /* margin-bottom: -1px; */
   @media (max-width: 960px) {
     font-size: 52px;
   }
@@ -64,7 +89,6 @@ export const Avatar = styled.img`
   border-radius: 999px;
   width: 140px;
   margin-right: 50px;
-  /* animation: ${border} 1s infinite; */
   cursor: progress;
 
   @media (max-width: 960px) {

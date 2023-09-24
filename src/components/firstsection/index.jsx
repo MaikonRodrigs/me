@@ -2,19 +2,16 @@ import React, { useContext } from 'react';
 import * as theme from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ThemeContext } from 'styled-components'
 
-
-
 import * as S from './styles';
 
 function FirstSection() {
   const { title } = useContext(ThemeContext);
 
-
   const text = `About`
   const jsonFetch = `{
     "informations": {
       "name": "Maikon Rodrigues",
-      "year": 33,
+      "year": 34,
       "nacionality": "Brazilian",
       "home": {
         "country": "Brazil",
@@ -28,13 +25,12 @@ function FirstSection() {
     "abilities": {
       "react": true,
       "react-native": true,
-      "base_experience": 5,
+      "base_experience": 6,
       "languages": ["Javascript", "TypeScript"],
       "others": {
         "base-languages": {
           "html": true,
           "css": true,
-          "sass": true
         }
       }
     }
