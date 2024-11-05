@@ -6,7 +6,7 @@ import * as S from "./styles";
 function Presentation() {
   const [loading, setLoading] = useState(false);
 
-  const Curriculum = 'https://drive.google.com/file/d/1GiY4wIKvO7xPRf7Az4LdXV8UE5BOoF6t/view?usp=sharing'
+  const Curriculum = 'https://drive.google.com/file/d/1au2v_f8ko-LV7_dO-pTSfcnMM69fqbSD/view?usp=sharing'
 
   const infos = {
     git: "https://github.com/maikonrodrigs",
